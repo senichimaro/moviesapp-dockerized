@@ -1,7 +1,8 @@
 FROM node:17-alpine
+RUN apk add --no-cache python g++ make
 
 COPY . .
-WORKDIR . .
+WORKDIR .
 
 RUN npm i
 ENTRYPOINT [ "nodemon", "server.js" ]
